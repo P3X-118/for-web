@@ -2,7 +2,7 @@ name: Release Please
 
 on:
   push:
-    branches: [main] # updates/opens the release PR when commits land on main
+    branches: [main, sgc] # updates/opens the release PR when commits land on main or sgc
   workflow_dispatch:
 
 permissions:
@@ -21,26 +21,20 @@ jobs:
     outputs:
       release_created: ${{ steps.rp.outputs.release_created }}
     steps:
-      - id: app-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ secrets.GH_STOAT_RELEASE_APP_ID }}
-          private-key: ${{ secrets.GH_STOAT_RELEASE_APP_PRIVATE_KEY }}
       - id: rp
         uses: googleapis/release-please-action@v4
         with:
-          token: ${{ steps.app-token.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
 
       - uses: actions/checkout@v4
         with:
-          token: ${{ steps.app-token.outputs.token }}
           submodules: recursive
 
       - name: Generate i18n catalog
         if: ${{ steps.rp.outputs.prs_created == 'true' || steps.rp.outputs.prs_updated == 'true' }}
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RP_PR_OUTPUT_JSON: ${{ steps.rp.outputs.prs }}
         run: |
           PR_NUMBER=$(echo "$RP_PR_OUTPUT_JSON" | jq -r '.[0].number')
@@ -79,14 +73,7 @@ jobs:
       contents: write
     
     steps:
-      - id: app-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ secrets.GH_STOAT_RELEASE_APP_ID }}
-          private-key: ${{ secrets.GH_STOAT_RELEASE_APP_PRIVATE_KEY }}
       - uses: actions/checkout@v4
-        with:
-          token: ${{ steps.app-token.outputs.token }}
       - run: |
-          git fetch origin stable:stable
-          git push origin main:stable -f
+          git fetch origin sgc:sgc || true
+          git push origin ${{ github.ref_name }}:sgc -f
