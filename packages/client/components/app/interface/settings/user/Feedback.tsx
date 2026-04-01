@@ -48,7 +48,7 @@ export function Feedback() {
           </CategoryButton>
         </Link> */}
         <Link
-          href="https://github.com/orgs/stoatchat/discussions/categories/feature-suggestions"
+          href="https://github.com/orgs/stoked/discussions/categories/feature-suggestions"
           target="_blank"
         >
           <CategoryButton
@@ -63,7 +63,7 @@ export function Feedback() {
           </CategoryButton>
         </Link>
         <Link
-          href="https://github.com/orgs/stoatchat/discussions/categories/feedback"
+          href="https://github.com/orgs/stoked/discussions/categories/feedback"
           target="_blank"
         >
           <CategoryButton
@@ -76,7 +76,7 @@ export function Feedback() {
           </CategoryButton>
         </Link>
         <Link
-          href="https://github.com/stoatchat/for-web/issues?q=is%3Aissue%20state%3Aopen%20type%3ABug"
+          href="https://github.com/stoked/for-web/issues?q=is%3Aissue%20state%3Aopen%20type%3ABug"
           target="_blank"
         >
           <CategoryButton

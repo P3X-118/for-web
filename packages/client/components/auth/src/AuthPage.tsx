@@ -148,7 +148,7 @@ export function AuthPage(props: { children: JSX.Element }) {
         <Nav>
           <NavItems variant="stack">
             <NavItems>
-              <LinkWithIcon href="https://github.com/stoatchat" target="_blank">
+              <LinkWithIcon href="https://github.com/stoked" target="_blank">
                 <BiLogosGithub size={24} />
               </LinkWithIcon>
               <LinkWithIcon

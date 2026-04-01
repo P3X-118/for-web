@@ -2,12 +2,12 @@
 <h1>
   Stoat Frontend
   
-  [![Stars](https://img.shields.io/github/stars/stoatchat/for-web?style=flat-square&logoColor=white)](https://github.com/stoatchat/for-web/stargazers)
-  [![Forks](https://img.shields.io/github/forks/stoatchat/for-web?style=flat-square&logoColor=white)](https://github.com/stoatchat/for-web/network/members)
-  [![Pull Requests](https://img.shields.io/github/issues-pr/stoatchat/for-web?style=flat-square&logoColor=white)](https://github.com/stoatchat/for-web/pulls)
-  [![Issues](https://img.shields.io/github/issues/stoatchat/for-web?style=flat-square&logoColor=white)](https://github.com/stoatchat/for-web/issues)
-  [![Contributors](https://img.shields.io/github/contributors/stoatchat/for-web?style=flat-square&logoColor=white)](https://github.com/stoatchat/for-web/graphs/contributors)
-  [![License](https://img.shields.io/github/license/stoatchat/for-web?style=flat-square&logoColor=white)](https://github.com/stoatchat/for-web/blob/main/LICENSE)
+  [![Stars](https://img.shields.io/github/stars/stoked/for-web?style=flat-square&logoColor=white)](https://github.com/stoked/for-web/stargazers)
+  [![Forks](https://img.shields.io/github/forks/stoked/for-web?style=flat-square&logoColor=white)](https://github.com/stoked/for-web/network/members)
+  [![Pull Requests](https://img.shields.io/github/issues-pr/stoked/for-web?style=flat-square&logoColor=white)](https://github.com/stoked/for-web/pulls)
+  [![Issues](https://img.shields.io/github/issues/stoked/for-web?style=flat-square&logoColor=white)](https://github.com/stoked/for-web/issues)
+  [![Contributors](https://img.shields.io/github/contributors/stoked/for-web?style=flat-square&logoColor=white)](https://github.com/stoked/for-web/graphs/contributors)
+  [![License](https://img.shields.io/github/license/stoked/for-web?style=flat-square&logoColor=white)](https://github.com/stoked/for-web/blob/main/LICENSE)
 </h1>
 The official web client powering https://stoat.chat/app, built with <a href="https://www.solidjs.com/">Solid.js</a> 💖. <br/>
 Track the project roadmap on <a href="https://op.stoatinternal.com/projects/revolt-for-web/roadmap">OpenProject</a>.
@@ -16,7 +16,7 @@ Track the project roadmap on <a href="https://op.stoatinternal.com/projects/revo
 
 ## Development Guide
 
-Before contributing, make yourself familiar with [our contribution guidelines](https://developers.stoat.chat/developing/contrib/), the [code style guidelines](./GUIDELINES.md), and the [technical documentation for this project](https://stoatchat.github.io/for-web/).
+Before contributing, make yourself familiar with [our contribution guidelines](https://developers.stoat.chat/developing/contrib/), the [code style guidelines](./GUIDELINES.md), and the [technical documentation for this project](https://stoked.github.io/for-web/).
 
 Before getting started, you'll want to install:
 
@@ -27,7 +27,7 @@ Then proceed to setup:
 
 ```bash
 # clone the repository
-git clone --recursive https://github.com/stoatchat/for-web client
+git clone --recursive https://github.com/stoked/for-web client
 cd client
 
 # update submodules if you pull new changes
@@ -84,7 +84,7 @@ If you want the client to connect to the official hosted backend instead, open t
 
 ```
 
-When these variables are not set, the client automatically falls back to the official backend. (See https://github.com/stoatchat/for-web/blob/main/packages/client/components/common/lib/env.ts)
+When these variables are not set, the client automatically falls back to the official backend. (See https://github.com/stoked/for-web/blob/main/packages/client/components/common/lib/env.ts)
 
 ## Deployment Guide
 
