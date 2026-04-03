@@ -1,5 +1,5 @@
 # For-web maintainers
-* @stoatchat/for-web-maintainers
+* @stoked/for-web-maintainers
 
 # UI/UX related code
-/packages/client @stoatchat/for-web-maintainers @stoatchat/ui-ux
+/packages/client @stoked/for-web-maintainers @stoked/ui-ux
