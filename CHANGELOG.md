@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.4.0](https://github.com/P3X-118/for-web/compare/stoat-for-web-v0.3.0...stoat-for-web-v0.4.0) (2026-04-10)
+
+
+### Features
+
+* Accept autocomplete suggestion w/ tab ([#1003](https://github.com/P3X-118/for-web/issues/1003)) ([cfdbcd3](https://github.com/P3X-118/for-web/commit/cfdbcd37c096af390858383ef28ae6984a53edf6))
+* Accept autocomplete suggestion w/ tab, or accept emoji with a seocnd ':' ([cfdbcd3](https://github.com/P3X-118/for-web/commit/cfdbcd37c096af390858383ef28ae6984a53edf6))
+* add automatic gain control to voice processing options ([#953](https://github.com/P3X-118/for-web/issues/953)) ([b169f94](https://github.com/P3X-118/for-web/commit/b169f945682c191744a46ce4537a20e465d05fba))
+* Add invite_only support, add invite code field ([#1013](https://github.com/P3X-118/for-web/issues/1013)) ([50e9a38](https://github.com/P3X-118/for-web/commit/50e9a38229cc58c630fb03736fbeff961b2a4b3e))
+* Add Toggleable Enhanced Noise Suppression Using RNNoise ([#783](https://github.com/P3X-118/for-web/issues/783)) ([15c19df](https://github.com/P3X-118/for-web/commit/15c19df95390d01967089d3727c76ca4223aecdf))
+* copy username from modal/card ([#1044](https://github.com/P3X-118/for-web/issues/1044)) ([2d91cca](https://github.com/P3X-118/for-web/commit/2d91cca7dade23a927e872b4b42078b540343e95))
+
+
+### Bug Fixes
+
+* add missing jest-mocks package.json COPY in Dockerfile ([#994](https://github.com/P3X-118/for-web/issues/994)) ([1e595d8](https://github.com/P3X-118/for-web/commit/1e595d8b1e775e871a1f0d4c66e70c41679ddb51))
+* add VITE_GIFBOX_URL to Docker build and runtime injection ([#995](https://github.com/P3X-118/for-web/issues/995)) ([039e9ca](https://github.com/P3X-118/for-web/commit/039e9ca58430d4f10e51c35dcfe98e97f22727f4))
+* Dark theme flashbangs ([#1020](https://github.com/P3X-118/for-web/issues/1020)) ([c6bce05](https://github.com/P3X-118/for-web/commit/c6bce055d71c88f8c44eeaed89f00b579c741d23))
+* ensure mfa ticket is created before deleting server ([#876](https://github.com/P3X-118/for-web/issues/876)) ([161a205](https://github.com/P3X-118/for-web/commit/161a2059a96e8b0b0d0d33b5ae6698007b3064b0))
+* hide alert if server is muted ([#849](https://github.com/P3X-118/for-web/issues/849)) ([8fc3b5e](https://github.com/P3X-118/for-web/commit/8fc3b5ef003e0b11e6a3f3f651b0591e03e603b0))
+* info timestamp wrapping causing additional space below messages ([#719](https://github.com/P3X-118/for-web/issues/719)) ([d993343](https://github.com/P3X-118/for-web/commit/d99334318c0f561b92de3a926fbf702cb88294f6))
+* Make ProfileJoined.tsx adhere to locale ([#972](https://github.com/P3X-118/for-web/issues/972)) ([42d46f3](https://github.com/P3X-118/for-web/commit/42d46f35b87fd9b5f45b80a55e10eb2f3d48c80b))
+* May fix dark theme flashbangs as reported in [#606](https://github.com/P3X-118/for-web/issues/606) ([c6bce05](https://github.com/P3X-118/for-web/commit/c6bce055d71c88f8c44eeaed89f00b579c741d23))
+* Server deletion using wrong credentials ([161a205](https://github.com/P3X-118/for-web/commit/161a2059a96e8b0b0d0d33b5ae6698007b3064b0))
+* zoomed-in browser view hiding thumbnails ([#885](https://github.com/P3X-118/for-web/issues/885)) ([f4304f1](https://github.com/P3X-118/for-web/commit/f4304f14a54bfd55ce0a76ed20d9b52969885b5c))
+
 ## [0.3.0](https://github.com/stoatchat/for-web/compare/stoat-for-web-v0.2.1...stoat-for-web-v0.3.0) (2026-03-03)
 
 
