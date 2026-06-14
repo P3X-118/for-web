@@ -56,7 +56,7 @@ export function Feedback() {
             icon={<MdStar {...iconSize(22)} />}
             onClick={() => void 0}
             description={
-              <Trans>Suggest new Stoat features on GitHub discussions.</Trans>
+              <Trans>Suggest new Cooey Club features on GitHub discussions.</Trans>
             }
           >
             <Trans>Submit feature suggestion</Trans>

@@ -34,16 +34,16 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 4000000,
       },
       manifest: {
-        name: "Stoat",
-        short_name: "Stoat",
-        description: "User-first open source chat platform.",
+        name: "Cooey Club",
+        short_name: "Cooey",
+        description: "Cooey Club — community chat for the Cooey crew.",
         categories: ["communication", "chat", "messaging"],
         start_url: base,
         orientation: "portrait",
         display_override: ["window-controls-overlay"],
         display: "standalone",
-        background_color: "#101823",
-        theme_color: "#101823",
+        background_color: "#15181c",
+        theme_color: "#15181c",
         icons: [
           {
             src: `${base}assets/web/android-chrome-192x192.png`,

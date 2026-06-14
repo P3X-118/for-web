@@ -217,7 +217,7 @@ export function HomePage() {
               }
               icon={<MdRateReview {...iconSize(22)} />}
             >
-              <Trans>Give feedback on Stoat</Trans>
+              <Trans>Give feedback on Cooey Club</Trans>
             </CategoryButton>
             <CategoryButton
               onClick={() => openModal({ type: "settings", config: "user" })}
