@@ -9,7 +9,7 @@ import { Navigate } from "@revolt/routing";
 import { Button, Column } from "@revolt/ui";
 
 import { useState } from "@revolt/state";
-import Wordmark from "../../../../public/assets/web/wordmark.svg?component-solid";
+import logo from "../../../../public/assets/web/logo.png";
 
 /**
  * Flow for logging into an account
@@ -27,11 +27,13 @@ export default function FlowHome() {
           </Show>
 
           <Column gap="xl">
-            <Wordmark
+            <img
+              src={logo}
+              alt="Cooey Club"
               class={css({
-                width: "60%",
+                width: "55%",
                 margin: "auto",
-                fill: "var(--md-sys-color-on-surface)",
+                borderRadius: "24px",
               })}
             />
 
