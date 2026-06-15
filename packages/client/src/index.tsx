@@ -19,6 +19,7 @@ import FlowCreate from "@revolt/auth/src/flows/FlowCreate";
 import FlowDeleteAccount from "@revolt/auth/src/flows/FlowDelete";
 import FlowHome from "@revolt/auth/src/flows/FlowHome";
 import FlowLogin from "@revolt/auth/src/flows/FlowLogin";
+import FlowOIDCCallback from "@revolt/auth/src/flows/FlowOIDCCallback";
 import FlowResend from "@revolt/auth/src/flows/FlowResend";
 import FlowReset from "@revolt/auth/src/flows/FlowReset";
 import FlowVerify from "@revolt/auth/src/flows/FlowVerify";
@@ -149,6 +150,7 @@ render(
           <Route path="/resend" component={FlowResend} />
           <Route path="/reset" component={FlowReset} />
           <Route path="/verify/:token" component={FlowVerify} />
+          <Route path="/oidc" component={FlowOIDCCallback} />
           <Route path="/reset/:token" component={FlowConfirmReset} />
           <Route path="/*" component={FlowHome} />
         </Route>

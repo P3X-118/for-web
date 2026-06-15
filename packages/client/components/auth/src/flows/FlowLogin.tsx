@@ -4,6 +4,7 @@ import { Trans } from "@lingui-solid/solid/macro";
 
 import { useClientLifecycle } from "@revolt/client";
 import { State, TransitionType } from "@revolt/client/Controller";
+import { CONFIGURATION } from "@revolt/common";
 import { useModals } from "@revolt/modal";
 import { Navigate } from "@revolt/routing";
 import {
@@ -63,6 +64,15 @@ export default function FlowLogin() {
             <FlowTitle subtitle={<Trans>Sign into Cooey Club</Trans>} emoji="wave">
               <Trans>Welcome!</Trans>
             </FlowTitle>
+            <Column gap="xl" align>
+              <Button
+                onPress={() => {
+                  window.location.href = `${CONFIGURATION.DEFAULT_API_URL}/auth/oidc/login`;
+                }}
+              >
+                <Trans>Sign in with SSO</Trans>
+              </Button>
+            </Column>
             <Form onSubmit={performLogin}>
               <Fields fields={["email", "password"]} />
               <Column gap="xl" align>
