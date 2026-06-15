@@ -26,7 +26,7 @@ import MdPayments from "@material-design-icons/svg/filled/payments.svg?component
 import MdRateReview from "@material-design-icons/svg/filled/rate_review.svg?component-solid";
 import MdSettings from "@material-design-icons/svg/filled/settings.svg?component-solid";
 
-import Wordmark from "../../public/assets/web/wordmark.svg?component-solid";
+import logo from "../../public/assets/web/logo.png";
 
 import { HeaderIcon } from "./common/CommonHeader";
 
@@ -110,10 +110,12 @@ export function HomePage() {
       </Header>
       <div use:scrollable={{ class: content() }}>
         <Column>
-          <Wordmark
+          <img
+            src={logo}
+            alt="Cooey Club"
             class={css({
-              width: "160px",
-              fill: "var(--md-sys-color-on-surface)",
+              width: "140px",
+              borderRadius: "24px",
             })}
           />
         </Column>
