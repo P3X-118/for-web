@@ -19,6 +19,7 @@ import {
 import MdArrowBack from "@material-design-icons/svg/filled/arrow_back.svg?component-solid";
 
 import { useState } from "@revolt/state";
+import discord from "./discord.svg";
 import { FlowTitle } from "./Flow";
 import { Fields, Form } from "./Form";
 
@@ -66,11 +67,24 @@ export default function FlowLogin() {
             </FlowTitle>
             <Column gap="xl" align>
               <Button
+                size="md"
+                bg="#5865F2"
                 onPress={() => {
                   window.location.href = `${CONFIGURATION.DEFAULT_API_URL}/auth/oidc/login`;
                 }}
               >
-                <Trans>Sign in with SSO</Trans>
+                <span
+                  style={{
+                    display: "flex",
+                    "align-items": "center",
+                    "justify-content": "center",
+                    gap: "10px",
+                    color: "#fff",
+                  }}
+                >
+                  <img src={discord} alt="" style={{ height: "20px" }} />
+                  <Trans>Continue with Discord</Trans>
+                </span>
               </Button>
             </Column>
             <Form onSubmit={performLogin}>

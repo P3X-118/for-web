@@ -47,10 +47,6 @@ msgstr "(changes are being saved…)"
 msgid "{0, plural, one {# blocked message} other {# blocked messages}}"
 msgstr "{0, plural, one {# blocked message} other {# blocked messages}}"
 
-#: src/interface/navigation/channels/HomeSidebar.tsx
-#~ msgid "{0, plural, one {# Member} other {# Members}}"
-#~ msgstr "{0, plural, one {# Member} other {# Members}}"
-
 #. placeholder {0}: items().length
 #: components/ui/components/utils/files/FileDropAnywhereCollector.tsx
 msgid "{0, plural, one {Drop a file} other {Drop # files}}"
@@ -372,10 +368,6 @@ msgstr "Are you sure you want to delete this?"
 msgid "Are you sure you want to go to "
 msgstr "Are you sure you want to go to "
 
-#: components/modal/modals/LinkWarning.tsx
-#~ msgid "Are you sure you want to go to <0>{0}</0>?"
-#~ msgstr "Are you sure you want to go to <0>{0}</0>?"
-
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx
 msgid "Assign lower-ranked roles to lower-ranking members"
 msgstr "Assign lower-ranked roles to lower-ranking members"
@@ -389,6 +381,10 @@ msgstr "Assign Roles"
 #: components/app/interface/settings/user/Account.tsx
 msgid "Authenticator App"
 msgstr "Authenticator App"
+
+#: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx
+msgid "Automatic Gain Control"
+msgstr "Automatic Gain Control"
 
 #: components/app/interface/settings/user/profile/UserProfileEditor.tsx
 msgid "Avatar"
@@ -472,10 +468,6 @@ msgstr "Browser"
 #: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx
 msgid "Browser Echo Cancellation"
 msgstr "Browser Echo Cancellation"
-
-#: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx
-#~ msgid "Browser Noise Supression"
-#~ msgstr "Browser Noise Supression"
 
 #: components/app/interface/settings/user/Feedback.tsx
 msgid "Bug Tracker"
@@ -735,6 +727,11 @@ msgstr "Continue"
 msgid "Continue to app"
 msgstr "Continue to app"
 
+#: components/auth/src/flows/FlowLogin.tsx
+#: components/auth/src/flows/FlowHome.tsx
+msgid "Continue with Discord"
+msgstr "Continue with Discord"
+
 #: components/app/interface/settings/user/Language.tsx
 msgid "Contribute a language"
 msgstr "Contribute a language"
@@ -742,6 +739,18 @@ msgstr "Contribute a language"
 #: src/interface/navigation/channels/HomeSidebar.tsx
 msgid "Conversations"
 msgstr "Conversations"
+
+#: components/app/interface/settings/user/Native.tsx
+msgid "Cooey Club for Desktop"
+msgstr "Cooey Club for Desktop"
+
+#: components/auth/src/flows/FlowHome.tsx
+msgid "Cooey Club is one of the best ways to stay connected with your friends and community, anywhere, anytime."
+msgstr "Cooey Club is one of the best ways to stay connected with your friends and community, anywhere, anytime."
+
+#: components/app/interface/settings/user/Native.tsx
+msgid "Cooey Club will start in the system tray."
+msgstr "Cooey Club will start in the system tray."
 
 #: components/ui/components/features/profiles/ProfileBanner.tsx
 msgid "Copied!"
@@ -820,10 +829,6 @@ msgstr "Create"
 #: components/app/interface/settings/server/invites/ListServerInvites.tsx
 msgid "Create a channel before inviting others!"
 msgstr "Create a channel before inviting others!"
-
-#: src/interface/Home.tsx
-#~ msgid "Create a group"
-#~ msgstr "Create a group"
 
 #: src/interface/Home.tsx
 msgid "Create a group or server"
@@ -1087,10 +1092,6 @@ msgstr "Do Not Disturb"
 #: components/modal/modals/LinkWarning.tsx
 msgid "Don't ask me again for "
 msgstr "Don't ask me again for "
-
-#: components/modal/modals/LinkWarning.tsx
-#~ msgid "Don't ask me again for <0>{0}</0>"
-#~ msgstr "Don't ask me again for <0>{0}</0>"
 
 #: components/modal/modals/LeaveServer.tsx
 msgid "Don't notify others that you've left"
@@ -1362,6 +1363,7 @@ msgstr "Give us some detail"
 #: components/auth/src/flows/FlowVerify.tsx
 #: components/auth/src/flows/FlowReset.tsx
 #: components/auth/src/flows/FlowResend.tsx
+#: components/auth/src/flows/FlowOIDCCallback.tsx
 #: components/auth/src/flows/FlowConfirmReset.tsx
 msgid "Go back to login"
 msgstr "Go back to login"
@@ -1374,11 +1376,6 @@ msgstr "Go to account settings to edit your username"
 #: components/app/interface/settings/user/Feedback.tsx
 msgid "Go to the Stoat Lounge"
 msgstr "Go to the Stoat Lounge"
-
-#: src/interface/Home.tsx
-#: src/interface/Home.tsx
-#~ msgid "Go to the testers server"
-#~ msgstr "Go to the testers server"
 
 #: components/modal/modals/Onboarding.tsx
 msgid "Good"
@@ -1519,10 +1516,6 @@ msgstr "Join"
 msgid "Join a server"
 msgstr "Join a server"
 
-#: src/interface/channels/ChannelHeader.tsx
-#~ msgid "Join call"
-#~ msgstr "Join call"
-
 #: src/interface/Home.tsx
 #: components/app/interface/settings/user/Feedback.tsx
 msgid "Join the Stoat Lounge"
@@ -1632,8 +1625,8 @@ msgid "Load file ({0})"
 msgstr "Load file ({0})"
 
 #: components/auth/src/flows/FlowHome.tsx
-msgid "Log In"
-msgstr "Log In"
+msgid "Log in with email"
+msgstr "Log in with email"
 
 #: components/app/interface/settings/UserSettings.tsx
 #: components/app/interface/settings/user/Sessions.tsx
@@ -2314,10 +2307,6 @@ msgstr "Revenge or underage pornography"
 msgid "Review policy changes"
 msgstr "Review policy changes"
 
-#: components/app/interface/settings/user/Feedback.tsx
-#~ msgid "Roadmap"
-#~ msgstr "Roadmap"
-
 #: components/modal/modals/CreateRole.tsx
 #: components/app/interface/settings/server/roles/ServerRoleEditor.tsx
 msgid "Role Name"
@@ -2364,10 +2353,6 @@ msgstr "Search for groups..."
 #: components/modal/modals/AddMembersToGroup.tsx
 msgid "Search for users..."
 msgstr "Search for users..."
-
-#: components/app/interface/settings/user/Feedback.tsx
-#~ msgid "See what we're currently working on."
-#~ msgstr "See what we're currently working on."
 
 #: components/app/interface/settings/user/voice/VoiceInputOptions.tsx
 msgid "Select audio input"
@@ -2520,8 +2505,16 @@ msgid "Sign into Cooey Club"
 msgstr "Sign into Cooey Club"
 
 #: components/auth/src/flows/FlowHome.tsx
-msgid "Sign Up"
-msgstr "Sign Up"
+msgid "Sign up with email"
+msgstr "Sign up with email"
+
+#: components/auth/src/flows/FlowOIDCCallback.tsx
+msgid "Sign-in failed"
+msgstr "Sign-in failed"
+
+#: components/auth/src/flows/FlowOIDCCallback.tsx
+msgid "Signing you in…"
+msgstr "Signing you in…"
 
 #: components/app/interface/channels/text/Message.tsx
 msgid "Silent"
@@ -2543,10 +2536,6 @@ msgstr "Something is wrong with your request, {0}."
 #: components/i18n/errors.ts
 msgid "Something went wrong! {error}"
 msgstr "Something went wrong! {error}"
-
-#: components/i18n/errors.ts
-#~ msgid "Something went wrong! Try again later."
-#~ msgstr "Something went wrong! Try again later."
 
 #: components/app/interface/settings/user/Notifications.tsx
 msgid "Sounds"
@@ -2584,29 +2573,13 @@ msgstr "Start with Computer"
 msgid "Status"
 msgstr "Status"
 
-#: components/app/interface/settings/user/Native.tsx
-#~ msgid "Stoat Desktop"
-#~ msgstr "Stoat Desktop"
-
 #: components/ui/components/features/profiles/ProfileBadges.tsx
 msgid "Stoat Developer"
 msgstr "Stoat Developer"
 
-#: components/app/interface/settings/user/Native.tsx
-msgid "Cooey Club for Desktop"
-msgstr "Cooey Club for Desktop"
-
 #: components/ui/components/features/profiles/ProfileBadges.tsx
 msgid "Stoat Founder"
 msgstr "Stoat Founder"
-
-#: components/auth/src/flows/FlowHome.tsx
-msgid "Cooey Club is one of the best ways to stay connected with your friends and community, anywhere, anytime."
-msgstr "Cooey Club is one of the best ways to stay connected with your friends and community, anywhere, anytime."
-
-#: components/app/interface/settings/user/Native.tsx
-msgid "Cooey Club will start in the system tray."
-msgstr "Cooey Club will start in the system tray."
 
 #: components/app/interface/settings/user/Feedback.tsx
 msgid "Submit feature suggestion"
@@ -2972,10 +2945,6 @@ msgstr "View currently active bug reports here."
 msgid "View members"
 msgstr "View members"
 
-#: components/modal/modals/Changelog.tsx
-#~ msgid "View older updates"
-#~ msgstr "View older updates"
-
 #: src/interface/channels/ChannelHeader.tsx
 msgid "View pinned messages"
 msgstr "View pinned messages"
@@ -3030,11 +2999,6 @@ msgstr "Webhook Name"
 msgid "Webhooks"
 msgstr "Webhooks"
 
-#: src/interface/Home.tsx
-#: components/auth/src/flows/FlowLogin.tsx
-#~ msgid "Welcome to"
-#~ msgstr "Welcome to"
-
 #: components/auth/src/flows/FlowLogin.tsx
 msgid "Welcome!"
 msgstr "Welcome!"
@@ -3079,10 +3043,6 @@ msgstr "You are banned from this server."
 #: src/interface/Home.tsx
 msgid "You can also click the gear icon in the bottom left."
 msgstr "You can also click the gear icon in the bottom left."
-
-#: src/interface/Home.tsx
-#~ msgid "You can also right-click the user icon in the top left, or left click it if you're already home."
-#~ msgstr "You can also right-click the user icon in the top left, or left click it if you're already home."
 
 #: components/modal/modals/DeleteChannel.tsx
 msgid "You can re-open it later, but it will disappear on both sides."

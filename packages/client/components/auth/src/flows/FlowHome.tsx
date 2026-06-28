@@ -5,11 +5,13 @@ import { css } from "styled-system/css";
 
 import { useClientLifecycle } from "@revolt/client";
 import { TransitionType } from "@revolt/client/Controller";
+import { CONFIGURATION } from "@revolt/common";
 import { Navigate } from "@revolt/routing";
 import { Button, Column } from "@revolt/ui";
 
 import { useState } from "@revolt/state";
 import logo from "../../../../public/assets/web/logo.png";
+import discord from "./discord.svg";
 
 /**
  * Flow for logging into an account
@@ -17,6 +19,14 @@ import logo from "../../../../public/assets/web/logo.png";
 export default function FlowHome() {
   const state = useState();
   const { lifecycle, isLoggedIn, isError } = useClientLifecycle();
+
+  /**
+   * Start the Authentik (Discord) single sign-on flow. delta runs the OIDC
+   * authorization-code exchange server-side and returns to /login/oidc.
+   */
+  function continueWithDiscord() {
+    window.location.href = `${CONFIGURATION.DEFAULT_API_URL}/auth/oidc/login`;
+  }
 
   return (
     <Switch
@@ -36,6 +46,23 @@ export default function FlowHome() {
                 borderRadius: "24px",
               })}
             />
+
+            <Column>
+              <Button size="md" bg="#5865F2" onPress={continueWithDiscord}>
+                <span
+                  style={{
+                    display: "flex",
+                    "align-items": "center",
+                    "justify-content": "center",
+                    gap: "10px",
+                    color: "#fff",
+                  }}
+                >
+                  <img src={discord} alt="" style={{ height: "20px" }} />
+                  <Trans>Continue with Discord</Trans>
+                </span>
+              </Button>
+            </Column>
 
             <Column>
               <b
@@ -69,15 +96,15 @@ export default function FlowHome() {
             <Column>
               <a href="/login/auth">
                 <Column>
-                  <Button>
-                    <Trans>Log In</Trans>
+                  <Button variant="tonal">
+                    <Trans>Log in with email</Trans>
                   </Button>
                 </Column>
               </a>
               <a href="/login/create">
                 <Column>
-                  <Button variant="tonal">
-                    <Trans>Sign Up</Trans>
+                  <Button variant="text">
+                    <Trans>Sign up with email</Trans>
                   </Button>
                 </Column>
               </a>

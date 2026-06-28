@@ -382,6 +382,10 @@ msgstr ""
 msgid "Authenticator App"
 msgstr ""
 
+#: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx
+msgid "Automatic Gain Control"
+msgstr ""
+
 #: components/app/interface/settings/user/profile/UserProfileEditor.tsx
 msgid "Avatar"
 msgstr ""
@@ -464,10 +468,6 @@ msgstr ""
 #: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx
 msgid "Browser Echo Cancellation"
 msgstr ""
-
-#: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx
-#~ msgid "Browser Noise Supression"
-#~ msgstr ""
 
 #: components/app/interface/settings/user/Feedback.tsx
 msgid "Bug Tracker"
@@ -727,12 +727,29 @@ msgstr ""
 msgid "Continue to app"
 msgstr ""
 
+#: components/auth/src/flows/FlowLogin.tsx
+#: components/auth/src/flows/FlowHome.tsx
+msgid "Continue with Discord"
+msgstr ""
+
 #: components/app/interface/settings/user/Language.tsx
 msgid "Contribute a language"
 msgstr ""
 
 #: src/interface/navigation/channels/HomeSidebar.tsx
 msgid "Conversations"
+msgstr ""
+
+#: components/app/interface/settings/user/Native.tsx
+msgid "Cooey Club for Desktop"
+msgstr ""
+
+#: components/auth/src/flows/FlowHome.tsx
+msgid "Cooey Club is one of the best ways to stay connected with your friends and community, anywhere, anytime."
+msgstr ""
+
+#: components/app/interface/settings/user/Native.tsx
+msgid "Cooey Club will start in the system tray."
 msgstr ""
 
 #: components/ui/components/features/profiles/ProfileBanner.tsx
@@ -1346,6 +1363,7 @@ msgstr ""
 #: components/auth/src/flows/FlowVerify.tsx
 #: components/auth/src/flows/FlowReset.tsx
 #: components/auth/src/flows/FlowResend.tsx
+#: components/auth/src/flows/FlowOIDCCallback.tsx
 #: components/auth/src/flows/FlowConfirmReset.tsx
 msgid "Go back to login"
 msgstr ""
@@ -1607,7 +1625,7 @@ msgid "Load file ({0})"
 msgstr ""
 
 #: components/auth/src/flows/FlowHome.tsx
-msgid "Log In"
+msgid "Log in with email"
 msgstr ""
 
 #: components/app/interface/settings/UserSettings.tsx
@@ -2487,7 +2505,15 @@ msgid "Sign into Cooey Club"
 msgstr ""
 
 #: components/auth/src/flows/FlowHome.tsx
-msgid "Sign Up"
+msgid "Sign up with email"
+msgstr ""
+
+#: components/auth/src/flows/FlowOIDCCallback.tsx
+msgid "Sign-in failed"
+msgstr ""
+
+#: components/auth/src/flows/FlowOIDCCallback.tsx
+msgid "Signing you in…"
 msgstr ""
 
 #: components/app/interface/channels/text/Message.tsx
@@ -2551,20 +2577,8 @@ msgstr ""
 msgid "Stoat Developer"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx
-msgid "Cooey Club for Desktop"
-msgstr ""
-
 #: components/ui/components/features/profiles/ProfileBadges.tsx
 msgid "Stoat Founder"
-msgstr ""
-
-#: components/auth/src/flows/FlowHome.tsx
-msgid "Cooey Club is one of the best ways to stay connected with your friends and community, anywhere, anytime."
-msgstr ""
-
-#: components/app/interface/settings/user/Native.tsx
-msgid "Cooey Club will start in the system tray."
 msgstr ""
 
 #: components/app/interface/settings/user/Feedback.tsx
