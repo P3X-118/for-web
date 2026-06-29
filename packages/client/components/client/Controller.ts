@@ -181,15 +181,24 @@ class Lifecycle {
 
     switch (nextState) {
       case State.LoggingIn:
-        this.client.api.get("/onboard/hello").then(({ onboarding }) => {
-          if (onboarding) {
-            this.transition({
-              type: TransitionType.NoUser,
-            });
-          } else {
+        this.client.api
+          .get("/onboard/hello")
+          .then(({ onboarding }) => {
+            if (onboarding) {
+              this.transition({
+                type: TransitionType.NoUser,
+              });
+            } else {
+              this.client.connect();
+            }
+          })
+          .catch(() => {
+            // Couldn't read onboarding status (network blip, or the restored
+            // session was revoked/expired). Fall back to the connection path,
+            // which has its own auth handling + retries: a transient failure
+            // reconnects, a truly invalid session surfaces as InvalidSession.
             this.client.connect();
-          }
-        });
+          });
 
         break;
       case State.Connecting:
@@ -261,7 +270,13 @@ class Lifecycle {
             user_id: transition.session.userId,
           });
 
-          this.#enter(State.Connecting);
+          // Resume via LoggingIn (not Connecting) so /onboard/hello runs before
+          // we open the WebSocket. A restored session can belong to a user who
+          // never finished onboarding (e.g. a fresh SSO login that hard-reloaded
+          // the SPA); opening the socket for such a session is rejected as
+          // InvalidSession ("You were logged out!"). Onboarded sessions just
+          // pass the check and connect as before.
+          this.#enter(State.LoggingIn);
         }
         break;
       case State.LoggingIn:
@@ -273,8 +288,10 @@ class Lifecycle {
             this.#enter(State.Onboarding);
             break;
           case TransitionType.PermanentFailure:
+            this.#permanentError = transition.error;
+            this.#enter(State.Error);
+            break;
           case TransitionType.TemporaryFailure:
-            // TODO: relay error
             this.#enter(State.Error);
             break;
         }

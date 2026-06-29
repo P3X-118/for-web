@@ -1,4 +1,4 @@
-import { Match, Switch } from "solid-js";
+import { Match, Switch, createSignal } from "solid-js";
 
 import { Trans } from "@lingui-solid/solid/macro";
 
@@ -20,6 +20,7 @@ import MdArrowBack from "@material-design-icons/svg/filled/arrow_back.svg?compon
 
 import { useState } from "@revolt/state";
 import discord from "./discord.svg";
+import { OIDC_USERNAME_KEY } from "./FlowOIDCCallback";
 import { FlowTitle } from "./Flow";
 import { Fields, Form } from "./Form";
 
@@ -30,6 +31,21 @@ export default function FlowLogin() {
   const state = useState();
   const modals = useModals();
   const { lifecycle, isLoggedIn, login, selectUsername } = useClientLifecycle();
+
+  // One-time read of the IdP-suggested username stashed by the OIDC callback,
+  // used to prefill the onboarding username field. Cleared on read so it does
+  // not leak into a later onboarding in the same tab.
+  const [suggestedUsername] = createSignal<string>(
+    (() => {
+      try {
+        const value = sessionStorage.getItem(OIDC_USERNAME_KEY) ?? "";
+        if (value) sessionStorage.removeItem(OIDC_USERNAME_KEY);
+        return value;
+      } catch {
+        return "";
+      }
+    })(),
+  );
 
   /**
    * Log into account
@@ -134,7 +150,13 @@ export default function FlowLogin() {
           </Text>
 
           <Form onSubmit={select}>
-            <Fields fields={["username"]} />
+            <Fields
+              fields={[
+                suggestedUsername()
+                  ? { field: "username", value: suggestedUsername() }
+                  : "username",
+              ]}
+            />
             <Row align justify>
               <Button
                 variant="text"
