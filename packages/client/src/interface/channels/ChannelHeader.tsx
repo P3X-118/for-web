@@ -23,6 +23,7 @@ import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
 import MdGroup from "@material-design-icons/svg/outlined/group.svg?component-solid";
 import MdPersonAdd from "@material-design-icons/svg/outlined/person_add.svg?component-solid";
+import MdRssFeed from "@material-design-icons/svg/outlined/rss_feed.svg?component-solid";
 import MdSettings from "@material-design-icons/svg/outlined/settings.svg?component-solid";
 
 import MdKeep from "../../svg/keep.svg?component-solid";
@@ -179,6 +180,28 @@ export function ChannelHeader(props: Props) {
         >
           <MdPersonAdd />
         </Button>
+      </Show>
+
+      <Show when={props.sidebarState}>
+        <IconButton
+          use:floating={{
+            tooltip: {
+              placement: "bottom",
+              content: t`Bluesky feed`,
+            },
+          }}
+          onPress={() =>
+            props.sidebarState!().state === "bluesky"
+              ? props.setSidebarState!({
+                  state: "default",
+                })
+              : props.setSidebarState!({
+                  state: "bluesky",
+                })
+          }
+        >
+          <MdRssFeed />
+        </IconButton>
       </Show>
 
       <Show when={props.sidebarState}>

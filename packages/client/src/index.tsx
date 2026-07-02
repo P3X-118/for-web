@@ -37,6 +37,7 @@ import "@revolt/ui/styles";
 import AuthPage from "./Auth";
 import Interface from "./Interface";
 import "./index.css";
+import { Bluesky } from "./interface/Bluesky";
 import { DevelopmentPage } from "./interface/Development";
 import { Discover } from "./interface/Discover";
 import { Friends } from "./interface/Friends";
@@ -158,6 +159,7 @@ render(
           <Route path="/pwa" component={PWARedirect} />
           <Route path="/dev" component={DevelopmentPage} />
           <Route path="/discover/*" component={Discover} />
+          <Route path="/bluesky" component={Bluesky} />
           <Route path="/settings" component={SettingsRedirect} />
           <Route path="/invite/:code" component={InviteRedirect} />
           <Route path="/bot/:code" component={BotRedirect} />

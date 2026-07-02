@@ -456,6 +456,14 @@ msgstr "Заблокированный"
 msgid "Blocked User"
 msgstr "Заблокированный пользователь"
 
+#: components/app/interface/settings/UserSettings.tsx
+msgid "Bluesky"
+msgstr ""
+
+#: src/interface/channels/ChannelHeader.tsx
+msgid "Bluesky feed"
+msgstr ""
+
 #: components/app/interface/channels/text/Message.tsx
 msgid "Bot"
 msgstr "Бот"
@@ -470,8 +478,8 @@ msgid "Browser Echo Cancellation"
 msgstr ""
 
 #: components/app/interface/settings/user/Feedback.tsx
-msgid "Bug Tracker"
-msgstr "Баг трекер"
+#~ msgid "Bug Tracker"
+#~ msgstr "Баг трекер"
 
 #: src/interface/navigation/channels/HomeSidebar.tsx
 #: src/interface/channels/text/MemberSidebar.tsx
@@ -616,6 +624,10 @@ msgstr ""
 msgid "Choose username"
 msgstr ""
 
+#: components/app/interface/settings/user/Bluesky.tsx
+#~ msgid "Claim your @handle.cooey.club account."
+#~ msgstr ""
+
 #: src/interface/navigation/servers/UserMenu.tsx
 msgid "Clear status"
 msgstr "Очистить статус"
@@ -750,6 +762,10 @@ msgstr ""
 
 #: components/app/interface/settings/user/Native.tsx
 msgid "Cooey Club will start in the system tray."
+msgstr ""
+
+#: components/app/interface/settings/UserSettings.tsx
+msgid "Cooey on Bluesky"
 msgstr ""
 
 #: components/ui/components/features/profiles/ProfileBanner.tsx
@@ -1279,8 +1295,8 @@ msgstr "Не удалось проверить!"
 
 #: components/app/interface/settings/UserSettings.tsx
 #: components/app/interface/settings/user/Feedback.tsx
-msgid "Feedback"
-msgstr "Обратная связь"
+#~ msgid "Feedback"
+#~ msgstr "Обратная связь"
 
 #: src/interface/Home.tsx
 msgid "Find a community based on your hobbies or interests."
@@ -1352,8 +1368,8 @@ msgid "Get active recovery codes"
 msgstr ""
 
 #: src/interface/Home.tsx
-msgid "Give feedback on Cooey Club"
-msgstr ""
+#~ msgid "Give feedback on Cooey Club"
+#~ msgstr ""
 
 #: components/modal/modals/ReportContent.tsx
 msgid "Give us some detail"
@@ -1373,7 +1389,6 @@ msgid "Go to account settings to edit your username"
 msgstr ""
 
 #: src/interface/Home.tsx
-#: components/app/interface/settings/user/Feedback.tsx
 msgid "Go to the Stoat Lounge"
 msgstr ""
 
@@ -1517,7 +1532,6 @@ msgid "Join a server"
 msgstr ""
 
 #: src/interface/Home.tsx
-#: components/app/interface/settings/user/Feedback.tsx
 msgid "Join the Stoat Lounge"
 msgstr ""
 
@@ -1608,8 +1622,8 @@ msgid "Let Cooey Club use its own custom titlebar."
 msgstr ""
 
 #: src/interface/Home.tsx
-msgid "Let us know how we can improve our app by giving us feedback."
-msgstr "Дайте нам знать, как мы можем улучшить наше приложение, оставив нам отзыв."
+#~ msgid "Let us know how we can improve our app by giving us feedback."
+#~ msgstr "Дайте нам знать, как мы можем улучшить наше приложение, оставив нам отзыв."
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx
 msgid "Light"
@@ -1648,6 +1662,10 @@ msgstr "Войти"
 #: components/app/interface/settings/user/Sessions.tsx
 msgid "Logs you out of all sessions except this device."
 msgstr ""
+
+#: components/app/interface/settings/user/Bluesky.tsx
+#~ msgid "Looking up your Bluesky…"
+#~ msgstr ""
 
 #: components/modal/modals/ReportContent.tsx
 msgid "Malware or phishing"
@@ -2011,6 +2029,11 @@ msgstr ""
 msgid "Open settings"
 msgstr "Открыть настройки"
 
+#: src/interface/Home.tsx
+#: components/app/interface/settings/user/Bluesky.tsx
+msgid "Open your Bluesky"
+msgstr ""
+
 #: components/modal/modals/ReportContent.tsx
 msgid "Other"
 msgstr ""
@@ -2354,6 +2377,14 @@ msgstr ""
 msgid "Search for users..."
 msgstr ""
 
+#: components/app/interface/settings/user/Bluesky.tsx
+msgid "See your Bluesky feed — you're signed in automatically."
+msgstr ""
+
+#: src/interface/Home.tsx
+msgid "See your Cooey Bluesky feed — you're signed in automatically."
+msgstr ""
+
 #: components/app/interface/settings/user/voice/VoiceInputOptions.tsx
 msgid "Select audio input"
 msgstr ""
@@ -2467,6 +2498,10 @@ msgstr ""
 msgid "Sessions"
 msgstr "Сессии"
 
+#: components/app/interface/settings/user/Bluesky.tsx
+#~ msgid "Set up your Bluesky"
+#~ msgstr ""
+
 #: components/modal/modals/CustomStatus.tsx
 msgid "Set your status"
 msgstr ""
@@ -2542,8 +2577,8 @@ msgid "Sounds"
 msgstr "Звуки"
 
 #: components/app/interface/settings/UserSettings.tsx
-msgid "Source Code"
-msgstr "Исходный код"
+#~ msgid "Source Code"
+#~ msgstr "Исходный код"
 
 #: components/modal/modals/ReportContent.tsx
 msgid "Spam or similar platform abuse"
@@ -2582,12 +2617,12 @@ msgid "Stoat Founder"
 msgstr ""
 
 #: components/app/interface/settings/user/Feedback.tsx
-msgid "Submit feature suggestion"
-msgstr "Отправить предложение"
+#~ msgid "Submit feature suggestion"
+#~ msgstr "Отправить предложение"
 
 #: components/app/interface/settings/user/Feedback.tsx
-msgid "Submit feedback"
-msgstr "Отправить отзыв"
+#~ msgid "Submit feedback"
+#~ msgstr "Отправить отзыв"
 
 #: components/app/interface/settings/user/bots/ViewBot.tsx
 msgid "Submit to Discover"
@@ -2598,8 +2633,8 @@ msgid "Subscriptions"
 msgstr ""
 
 #: components/app/interface/settings/user/Feedback.tsx
-msgid "Suggest new Cooey Club features on GitHub discussions."
-msgstr ""
+#~ msgid "Suggest new Cooey Club features on GitHub discussions."
+#~ msgstr ""
 
 #: src/interface/Home.tsx
 msgid "Support the project by donating - thank you!"
@@ -2938,8 +2973,8 @@ msgid "View Channel"
 msgstr "Просматривать канал"
 
 #: components/app/interface/settings/user/Feedback.tsx
-msgid "View currently active bug reports here."
-msgstr "Посмотреть активные в настоящее время отчеты об ошибках можно здесь."
+#~ msgid "View currently active bug reports here."
+#~ msgstr "Посмотреть активные в настоящее время отчеты об ошибках можно здесь."
 
 #: src/interface/channels/ChannelHeader.tsx
 msgid "View members"
@@ -3050,8 +3085,6 @@ msgstr "Вы можете снова открыть её позже, но она
 
 #: src/interface/Home.tsx
 #: src/interface/Home.tsx
-#: components/app/interface/settings/user/Feedback.tsx
-#: components/app/interface/settings/user/Feedback.tsx
 msgid "You can report issues and discuss improvements with us directly here."
 msgstr "Вы можете сообщать об ошибках и обсуждать идеи с нами прямо здесь."
 

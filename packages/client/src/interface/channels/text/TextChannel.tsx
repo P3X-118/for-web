@@ -31,6 +31,7 @@ import { VoiceChannelCallCardMount } from "@revolt/ui/components/features/voice/
 import { ChannelHeader } from "../ChannelHeader";
 import { ChannelPageProps } from "../ChannelPage";
 
+import { BlueskySidebar } from "./BlueskySidebar";
 import { MessageComposition } from "./Composition";
 import { MemberSidebar } from "./MemberSidebar";
 import { TextSearchSidebar } from "./TextSearchSidebar";
@@ -45,6 +46,9 @@ export type SidebarState =
     }
   | {
       state: "pins";
+    }
+  | {
+      state: "bluesky";
     }
   | {
       state: "default";
@@ -267,6 +271,9 @@ export function TextChannel(props: ChannelPageProps) {
                     query={{ pinned: true, sort: "Latest" }}
                   />
                 </WideSidebarContainer>
+              </Match>
+              <Match when={sidebarState().state === "bluesky"}>
+                <BlueskySidebar />
               </Match>
             </Switch>
 

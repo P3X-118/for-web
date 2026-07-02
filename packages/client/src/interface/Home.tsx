@@ -23,7 +23,7 @@ import MdExplore from "@material-design-icons/svg/filled/explore.svg?component-s
 import MdGroups3 from "@material-design-icons/svg/filled/groups_3.svg?component-solid";
 import MdHome from "@material-design-icons/svg/filled/home.svg?component-solid";
 import MdPayments from "@material-design-icons/svg/filled/payments.svg?component-solid";
-import MdRateReview from "@material-design-icons/svg/filled/rate_review.svg?component-solid";
+import MdCloud from "@material-design-icons/svg/filled/cloud.svg?component-solid";
 import MdSettings from "@material-design-icons/svg/filled/settings.svg?component-solid";
 
 import logo from "../../public/assets/web/logo.png";
@@ -205,21 +205,15 @@ export function HomePage() {
               </CategoryButton>
             </Show>
             <CategoryButton
-              onClick={() =>
-                openModal({
-                  type: "settings",
-                  config: "user",
-                  context: { page: "feedback" },
-                })
-              }
+              onClick={() => navigate("/bluesky")}
               description={
                 <Trans>
-                  Let us know how we can improve our app by giving us feedback.
+                  See your Cooey Bluesky feed — you're signed in automatically.
                 </Trans>
               }
-              icon={<MdRateReview {...iconSize(22)} />}
+              icon={<MdCloud {...iconSize(22)} />}
             >
-              <Trans>Give feedback on Cooey Club</Trans>
+              <Trans>Open your Bluesky</Trans>
             </CategoryButton>
             <CategoryButton
               onClick={() => openModal({ type: "settings", config: "user" })}

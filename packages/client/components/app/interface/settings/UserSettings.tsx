@@ -17,7 +17,7 @@ import MdLogout from "@material-design-icons/svg/outlined/logout.svg?component-s
 import MdMemory from "@material-design-icons/svg/outlined/memory.svg?component-solid";
 import MdMic from "@material-design-icons/svg/outlined/mic.svg?component-solid";
 import MdPalette from "@material-design-icons/svg/outlined/palette.svg?component-solid";
-import MdRateReview from "@material-design-icons/svg/outlined/rate_review.svg?component-solid";
+import MdCloud from "@material-design-icons/svg/outlined/cloud.svg?component-solid";
 import MdScience from "@material-design-icons/svg/outlined/science.svg?component-solid";
 import MdSmartToy from "@material-design-icons/svg/outlined/smart_toy.svg?component-solid";
 import MdVerifiedUser from "@material-design-icons/svg/outlined/verified_user.svg?component-solid";
@@ -28,7 +28,7 @@ import pkg from "../../../../../../package.json";
 import { SettingsConfiguration } from ".";
 import { MyAccount } from "./user/Account";
 import AdvancedSettings from "./user/Advanced";
-import { Feedback } from "./user/Feedback";
+import { Bluesky } from "./user/Bluesky";
 import { LanguageSettings } from "./user/Language";
 import Native from "./user/Native";
 import { Sessions } from "./user/Sessions";
@@ -85,8 +85,8 @@ const Config: SettingsConfiguration<{ server: Server }> = {
         return <MyBots />;
       case "language":
         return <LanguageSettings />;
-      case "feedback":
-        return <Feedback />;
+      case "bluesky":
+        return <Bluesky />;
       case "subscribe":
         return <EditSubscription />;
       case "native":
@@ -175,9 +175,9 @@ const Config: SettingsConfiguration<{ server: Server }> = {
               title: <Trans>My Bots</Trans>,
             },
             {
-              id: "feedback",
-              icon: <MdRateReview {...iconSize(20)} />,
-              title: <Trans>Feedback</Trans>,
+              id: "bluesky",
+              icon: <MdCloud {...iconSize(20)} />,
+              title: <Trans>Bluesky</Trans>,
             },
           ],
         },
@@ -265,9 +265,9 @@ const Config: SettingsConfiguration<{ server: Server }> = {
             //   title: t("app.special.modals.changelogs.title"),
             // },
             {
-              href: "https://github.com/stoked",
-              icon: <MdMemory {...iconSize(20)} />,
-              title: <Trans>Source Code</Trans>,
+              href: "https://bsky.app/profile/cooey.club",
+              icon: <MdCloud {...iconSize(20)} />,
+              title: <Trans>Cooey on Bluesky</Trans>,
             },
             {
               id: "advanced",

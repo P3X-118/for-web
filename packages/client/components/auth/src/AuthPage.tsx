@@ -1,4 +1,3 @@
-import { BiLogosGithub } from "solid-icons/bi";
 import { JSX } from "solid-js";
 
 import { Trans } from "@lingui-solid/solid/macro";
@@ -148,11 +147,8 @@ export function AuthPage(props: { children: JSX.Element }) {
         <Nav>
           <NavItems variant="stack">
             <NavItems>
-              <LinkWithIcon href="https://github.com/stoked" target="_blank">
-                <BiLogosGithub size={24} />
-              </LinkWithIcon>
               <LinkWithIcon
-                href="https://bsky.app/profile/stoat.chat"
+                href="https://bsky.app/profile/cooey.club"
                 target="_blank"
               >
                 <img
