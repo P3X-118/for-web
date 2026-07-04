@@ -21,6 +21,8 @@ export interface AtprotoSession {
  */
 export interface BlueskyPost {
   uri: string;
+  /** Author DID — canonical, used for the profile link (immune to handle lag). */
+  did?: string;
   handle: string;
   displayName?: string;
   avatar?: string;
@@ -55,7 +57,12 @@ export async function brokerAtprotoSession(
 interface RawFeedItem {
   post?: {
     uri?: string;
-    author?: { handle?: string; displayName?: string; avatar?: string };
+    author?: {
+      did?: string;
+      handle?: string;
+      displayName?: string;
+      avatar?: string;
+    };
     record?: { text?: string; createdAt?: string };
   };
 }
@@ -85,6 +92,7 @@ export async function fetchTimeline(
     const record = post.record ?? {};
     return {
       uri: post.uri ?? "",
+      did: author.did,
       handle: author.handle ?? "",
       displayName: author.displayName,
       avatar: author.avatar,
@@ -126,7 +134,35 @@ export async function getProfile(
   }
 }
 
-/** Public Bluesky AppView profile URL for a handle (opens the full client). */
-export function blueskyProfileUrl(handle: string): string {
-  return `https://bsky.app/profile/${handle}`;
+/** atproto's placeholder handle when bidirectional verification hasn't resolved. */
+export const INVALID_HANDLE = "handle.invalid";
+
+/** A handle is displayable only if present and not the invalid placeholder. */
+export function isValidHandle(handle?: string): boolean {
+  return !!handle && handle !== INVALID_HANDLE;
+}
+
+/**
+ * The handle to display for the signed-in user. Prefers the brokered session
+ * handle — it comes from Authentik (our source of truth) and is never
+ * `handle.invalid` — and only falls back to the AppView profile handle if the
+ * session somehow lacks one. This keeps the in-chat view correct even while the
+ * AppView is still indexing a freshly-provisioned account.
+ */
+export function displayHandle(
+  session: AtprotoSession,
+  profile?: BlueskyProfile | null,
+): string {
+  if (isValidHandle(session.handle)) return session.handle;
+  if (isValidHandle(profile?.handle)) return profile!.handle;
+  return session.handle || profile?.handle || "";
+}
+
+/**
+ * Public Bluesky profile URL. Pass a DID when you have one — it is canonical and
+ * immune to handle-resolution lag (an account whose handle still shows as
+ * `handle.invalid` in the AppView opens fine by DID). A valid handle also works.
+ */
+export function blueskyProfileUrl(ref: string): string {
+  return `https://bsky.app/profile/${ref}`;
 }

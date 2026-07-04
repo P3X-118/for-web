@@ -7,6 +7,7 @@ import {
   blueskyProfileUrl,
   brokerAtprotoSession,
   fetchTimeline,
+  isValidHandle,
 } from "@revolt/common";
 import { useState } from "@revolt/state";
 import { Text } from "@revolt/ui";
@@ -18,7 +19,7 @@ type FeedResult =
   | { status: "unauthed" }
   | { status: "nolink" }
   | { status: "error" }
-  | { status: "ok"; handle: string; posts: BlueskyPost[] };
+  | { status: "ok"; handle: string; did: string; posts: BlueskyPost[] };
 
 /**
  * Right-hand "personalized Bluesky feed" panel.
@@ -39,7 +40,7 @@ export function BlueskySidebar() {
 
     try {
       const posts = await fetchTimeline(session, 30);
-      return { status: "ok", handle: session.handle, posts };
+      return { status: "ok", handle: session.handle, did: session.did, posts };
     } catch {
       return { status: "error" };
     }
@@ -60,7 +61,7 @@ export function BlueskySidebar() {
         <Show when={ok()}>
           {(result) => (
             <ProfileLink
-              href={blueskyProfileUrl(result().handle)}
+              href={blueskyProfileUrl(result().did)}
               target="_blank"
               rel="noreferrer"
             >
@@ -126,7 +127,11 @@ function PostCard(props: { post: BlueskyPost }) {
   return (
     <Card
       href={
-        props.post.handle ? blueskyProfileUrl(props.post.handle) : undefined
+        props.post.did
+          ? blueskyProfileUrl(props.post.did)
+          : isValidHandle(props.post.handle)
+            ? blueskyProfileUrl(props.post.handle)
+            : undefined
       }
       target="_blank"
       rel="noreferrer"

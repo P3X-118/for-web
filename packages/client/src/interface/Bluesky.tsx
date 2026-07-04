@@ -6,8 +6,10 @@ import {
   BlueskyPost,
   blueskyProfileUrl,
   brokerAtprotoSession,
+  displayHandle,
   fetchTimeline,
   getProfile,
+  isValidHandle,
 } from "@revolt/common";
 import { useState } from "@revolt/state";
 import { Header, Text, main } from "@revolt/ui";
@@ -24,6 +26,7 @@ type BlueskyData =
   | {
       status: "ok";
       handle: string;
+      did: string;
       displayName?: string;
       avatar?: string;
       description?: string;
@@ -56,7 +59,8 @@ export function Bluesky() {
 
     return {
       status: "ok",
-      handle: profile?.handle ?? session.handle,
+      handle: displayHandle(session, profile),
+      did: session.did,
       displayName: profile?.displayName,
       avatar: profile?.avatar,
       description: profile?.description,
@@ -139,7 +143,7 @@ export function Bluesky() {
                       </Counts>
                     </ProfileMeta>
                     <ExternalLink
-                      href={blueskyProfileUrl(d().handle)}
+                      href={blueskyProfileUrl(d().did)}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -190,7 +194,11 @@ function PostCard(props: { post: BlueskyPost }) {
   return (
     <Card
       href={
-        props.post.handle ? blueskyProfileUrl(props.post.handle) : undefined
+        props.post.did
+          ? blueskyProfileUrl(props.post.did)
+          : isValidHandle(props.post.handle)
+            ? blueskyProfileUrl(props.post.handle)
+            : undefined
       }
       target="_blank"
       rel="noreferrer"

@@ -6,6 +6,8 @@ export {
   fetchTimeline,
   getProfile,
   blueskyProfileUrl,
+  displayHandle,
+  isValidHandle,
 } from "./lib/bluesky";
 export type {
   AtprotoSession,
